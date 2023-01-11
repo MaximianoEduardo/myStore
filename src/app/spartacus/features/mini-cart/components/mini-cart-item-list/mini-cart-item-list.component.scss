@@ -1,0 +1,13 @@
+
+:host {
+    display: block;
+  }
+  
+  .mini-cart-item {
+    + .mini-cart-item {
+      border-top: 1px dotted var(--cx-color-secondary);
+      margin: 24px 0;
+      padding-top: 24px;
+    }
+  }
+  

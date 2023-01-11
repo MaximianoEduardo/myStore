@@ -1,0 +1,28 @@
+<div
+  class="mini-cart-entry">
+  <div class="mini-cart-entry__img">
+    <cx-media
+      [container]="imageContainer"
+      format="cartIcon">
+    </cx-media>
+  </div>
+  <div class="mini-cart-entry__body">
+    <h6 class="mini-cart-entry__body--name">
+      {{item?.product?.name}}
+    </h6>
+    <div class="mini-cart-entry__body--price">
+      {{item?.basePrice?.formattedValue}}
+    </div>
+    <div *ngIf="quantityControl" class="mini-cart-entry__body--counter">
+      <cx-item-counter
+        [allowZero]="true"
+        [control]="quantityControl"
+        [max]="item?.product?.stock?.stockLevel!">
+      </cx-item-counter>
+    </div>
+    <div>
+      total:
+      <strong>{{item?.totalPrice?.formattedValue}}</strong>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+body {
+  --cx-color-background: #f4f4f4;
+  --cx-color-text: #000;
+  --cx-color-inverse: #ffffff;
+  --cx-color-transparent: transparent;
+  --cx-color-primary: #21CCAF;
+  --cx-color-secondary: #000;
+  --cx-color-success: #5dac06;
+  --cx-color-info: #17a2b8;
+  --cx-color-warning: #ffc107;
+  --cx-color-danger: #db0002;
+  --cx-color-light: #d3d6db;
+  --cx-color-dark: #000;
+  --cx-color-visual-focus: current;
+  --cx-color-background-focus: rgba(80, 176, 244, 0.1);
+  --cx-page-width-max: 1140px;
+  --cx-font-weight-light: 300;
+  --cx-font-weight-normal: 400;
+  --cx-font-weight-semi: 600;
+  --cx-font-weight-bold: 700;
+  --cx-text-transform: capitalize;
+  --cx-direction: ltr;
+  --cx-transition-duration: 0.5s;
+  --cx-animation-duration: 1s;
+  --cx-border-radius: 1em;
+  --cx-buttons-border-radius: 0.25rem;
+  --cx-border-style: solid;
+}

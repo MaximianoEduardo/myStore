@@ -1,0 +1,66 @@
+<button [attr.aria-label]="'miniCart.item' | cxTranslate: { count: quantity$ | async }"
+        class="btn btn-link" (click)="toogle()" >
+  <cx-icon [type]="iconTypes.CART"></cx-icon>
+
+  <span class="count">
+    Cart ({{quantity$ | async}})
+  </span>
+</button>
+
+<!-- Overlay -->
+<div [ngClass]="{'open': open}" (click)="toogle()"
+     class="mini-cart-summary-wrapper">
+</div>
+
+<aside class="mini-cart-summary" [ngClass]="{'open' : open}">
+
+  <!-- Hheader -->
+  <header class="mini-cart-summary__header">
+    <cx-icon [type]="iconTypes.CART"></cx-icon>
+    <h4 class="mini-cart-summary__header--title"> Cart ({{quantity$ | async}})</h4>
+    <button class="btn" (click)="toogle()">
+      <cx-icon [type]="iconTypes.CLOSE"></cx-icon>
+    </button>
+  </header>
+
+  <!-- Entries -->
+  <section class="mini-cart-summary__entries">
+    <!-- TODO: Inserir entries-->
+
+    <ng-container *ngIf="cart$ | async as cart">
+
+        <eco-app-mini-cart-item-list
+            [cartId]="cart.guid!"
+            [items]="cart.entries!"
+        ></eco-app-mini-cart-item-list>
+
+    </ng-container>
+
+    
+  </section>
+
+  <!-- Totals -->
+  <section class="mini-cart-totals">
+    <div class="mini-cart-totals__line" 
+        [ngClass]="total.property"
+        *ngFor="let total of (totals$ | async)">
+      <div class="mini-cart-totals__label">
+        {{ total.label }}
+      </div>
+      <div class="mini-cart-totals__value">
+        {{ total.value }}
+      </div>
+    </div>
+    <div class="mini-cart-action">
+      <a [routerLink]="{ cxRoute:'cart' } | cxUrl"
+         class="mini-cart-action__btn">
+        Cart
+      </a>
+      <a [routerLink]="{ cxRoute: 'checkout' } | cxUrl"
+         class="mini-cart-action__btn mini-cart-action__btn--primary">
+        Checkout
+      </a>
+    </div>
+  </section>
+
+</aside>

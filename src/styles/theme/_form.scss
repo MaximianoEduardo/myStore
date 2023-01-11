@@ -1,0 +1,13 @@
+%counter-border-color {
+  border-color: var(--cx-color-secondary) !important;
+}
+
+cx-item-counter {
+  height: 32px;
+  @extend %counter-border-color;
+
+  input {
+    border-color: var();
+    @extend %counter-border-color;
+  }
+}

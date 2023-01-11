@@ -1,0 +1,40 @@
+
+
+:host {
+    display: block;
+  }
+  
+  .mini-cart-entry {
+    display: flex;
+  
+    &__img {
+      width: 72px;
+      flex-basis: 72px;
+    }
+  
+    &__body {
+      padding-left: 16px;
+      flex: 1 1;
+      font-size: 0.75rem;
+  
+      &--name {
+        margin: 0;
+        font-size: 0.75rem;
+      }
+  
+      &--price {
+        font-weight: bold;
+        font-size: 1em;
+      }
+  
+      &--counter {
+        margin: 8px 0;
+      }
+    }
+  
+    &.loading {
+      &__img {
+        opacity: 0.5;
+      }
+    }
+  }

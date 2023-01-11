@@ -1,0 +1,80 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.btn {
+  &:focus, .focus {
+    box-shadow: none;
+  }
+}
+
+.btn-link {
+  &:hover {
+    color: var(--cx-color-primary);
+  }
+}
+
+
+cx-page-layout {
+  &.LandingPage2Template {
+    cx-page-slot {
+      &.Section1 {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+header {
+  background-color: var(--cx-color-inverse);
+  color: var(--cx-color-text);
+
+  .cx-hamburger {
+    display: flex;
+  }
+
+  .navigation {
+    .SiteContext,
+    .SiteLinks {
+      display: none;
+    }
+  }
+
+  cx-login {
+    padding: 1rem;
+    background-color: #FFF;
+
+    a {
+      color: var(--cx-color-secondary);
+    }
+  }
+}
+
+cx-page-layout {
+  display: block;
+  width: 100%;
+
+  &.footer {
+    background-color: var(--cx-background-color);
+    color: var(--cx-color-text);
+  }
+}
+
+cx-footer-navigation {
+  a {
+    &:hover {
+      color: var(--cx-color-primary);
+    }
+  }
+}
+
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background-color: var(--cx-color-text);
+}
